@@ -22,6 +22,7 @@ library(palmerpenguins)
 library(knitr)
 library(xaringanthemer)
 library(tidymodels)
+library(broom)
 ```
 
 ```{r setup, include=FALSE}
@@ -65,50 +66,32 @@ style_xaringan(
 )
 ```
 
+---
+
 ```{r include=FALSE}
-set.seed(1111)
+#model 1
+countries_fit_1 <- linear_reg() %>%
+  set_engine("lm") %>%
+  fit(happiness_score ~ economy + freedom + family + trust + health, data = happiness_countries)
 
-countries_split <- initial_split(happiness_countries, prop = 0.80)
-
-train_data <- training(countries_split)
-test_data  <- testing(countries_split)
 ```
 
 ```{r include=FALSE}
-#model 1 with ROC curve and auc
-countries_mod_1 <- logistic_reg() %>%
-  set_engine("glm")
+broom::augment(countries_fit_1$fit)
+#predict(countries_fit_1, happiness_countries)
 
-countries_rec_1 <- recipe(happiness_score ~ economy + family + health + trust + freedom, data = train_data) %>%
-  step_dummy(all_nominal(), -all_outcomes())
+#countries_fit_1_aug <- broom::augment(countries_fit_1$fit)
 
-countries_wflow_1 <- workflow() %>%
-  add_model(countries_mod_1) %>%
-  add_recipe(countries_rec_1)
 
-countries_fit_1 <- countries_wflow_1 %>%
-  fit(data = train_data)
-
-countries_pred_1 <- predict(countries_fit_1, test_data, type = "prob") %>%
-  bind_cols(test_data)
-
-countries_pred_1 %>%
-  roc_auc(
-    truth = happiness_score,
-    .pred_Agree,
-    event_level = "second"
-  )
-
-countries_pred_1 %>%
-  roc_curve(
-    truth = happiness_score,
-    .pred_Agree,
-    event_level = "second"
-  ) %>%
-  autoplot()
+#ggplot(countries_fit_1_aug, mapping = aes(x = .fitted, y = .resid))+
+#  geom_point(alpha = 0.5)+
+#  geom_hline(yintercept = 0, color = "gray", lty = #"dashed")+
+#  labs(x = "Predicted Happiness Score", y = "Residuals")
 ```
 
-```{r include=FALSE}
+---
+
+```{r include=FALSE, eval = FALSE}
 #model 2 with roc curve and auc
 countries_mod_2 <- linear_reg() %>%
   set_engine("lm")
