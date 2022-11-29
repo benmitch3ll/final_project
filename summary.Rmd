@@ -57,7 +57,13 @@ We made 5 scatter graphs to show how each of our chosen variables varied with th
 
 Graph 1: Family vs Happiness Score 
 
-- include results and graph reading
+- Our scatter plot has a positive linear correlation, where the association between points is quite strong. Where generally as the Happiness Score increases the Family rating increases to. There are few outliers from the general trend. 
+
+
+
+Graph Connections 
+
+- Where some outliers are shown means that no one variable has an entire effect on the Happiness Score and different variables need to be put together as they aren't related to each other. e.g. where one may has a high family rating they may have a lower rating in another variable, determining a change in their overall ranking. 
 
 **Evaluation**
 
