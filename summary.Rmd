@@ -55,14 +55,12 @@ We made 5 scatter graphs to show how each of our chosen variables varied with th
 
 **An Example of our Coding and Graph results**
 
-#try to include an image of code and graph
-
 ```{r echo=FALSE}
-knitr::include_graphics("images_for_write_up/example_code.png")
+#knitr::include_graphics("images_for_write_up/example_code.png")
 ```
 
 ```{r echo=FALSE}
-knitr::include_graphics("images_for_write_up/Example_Graph.png")
+#knitr::include_graphics("images_for_write_up/Example_Graph.png")
 ```
 
 **Findings**
@@ -70,6 +68,10 @@ knitr::include_graphics("images_for_write_up/Example_Graph.png")
 Average Happiness Score
 
 - Our calculations have found that the average happiness score of our rated countries is 5.375734 out of a possible 10. This is on a range from highest to lowest, (Switzerland to Togo).
+
+Region Results 
+
+- The graph we made for showing where each regions countries lie in terms of their Happiness Rank. It has shown that some Regions have stronger range positioning than others. Western Europe generally has higher ranking countries, this could be because a high number of the Western European countries, such as Norway, Germany and Denmark, are considered as developed countries (external source 2).
 
 Graph 1: Family vs Happiness Score 
 
@@ -135,3 +137,9 @@ External Source 1 -
 (2022, _Wealth Inequality by Country 2022_, Electronic Web Source, Accessed- 25.11.22)
 
 <https://worldpopulationreview.com/country-rankings/wealth-inequality-by-country>
+
+External Source 2 - 
+
+(2022, _Developed Countries List 2022_, Electronic Web Source, Access- 29.11.22)
+
+<https://worldpopulationreview.com/country-rankings/developed-countries>
