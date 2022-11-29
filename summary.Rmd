@@ -10,6 +10,12 @@ The research question we will be investigating is, 'How  Do a Range of Factors A
 
 It is of interest as it informs and develops an understanding of global wellbeing and development. It focuses on current issues and standards of countries internationally. 
 
+## Hypothesis 
+
+We hypothesise that in countries with higher GDP and freedom rating , the happiness score will be higher than countries with a lower GDP and freedom rating. Therefore the GDP and Freedom Rating  are proportional to the happiness score.
+
+We hypothesise that in countries where Government Corruption is higher, the happiness score will be lower than in countries with less government corruption. Therefore government corruption and happiness score will vary inversely with each other.
+
 ## What is the Ranking?
 
 A report based on national happiness, based on citizen ratings of their lives, it correlates results on a number of factors. 
@@ -45,7 +51,7 @@ Another dataset we left joined with our 2015 set was the 'countries of the world
 
 After analysing our dataset and how different variables can be used we decided to find another data set, _Countries of the World_, and use a left join to join it with our _2015 Happiness Set_. By doing this we have more variables for each individual country, such as population, coast line and population density. We noticed some of our countries had NA values, to resolve this we renamed some of the countries in the _Countries of the World_ dataset, so that they would match up with the _2015_ format of each country. 
 
-We made 5 scatter graphs to show how each of our chosen variables varied with the Happiness Score.
+We made 5 scatter graphs to show how each of our chosen variables varied with the Happiness Score. To which we then added a linear regression model 
 
 **Findings**
 
