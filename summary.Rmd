@@ -53,6 +53,10 @@ After analysing our dataset and how different variables can be used we decided t
 
 We made 5 scatter graphs to show how each of our chosen variables varied with the Happiness Score. To which we then added a linear regression model 
 
+**An Example of our Coding and Graph results**
+
+#try to include an image of code and graph
+
 **Findings**
 
 Graph 1: Family vs Happiness Score 
