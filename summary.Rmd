@@ -89,6 +89,8 @@ Graph Connections
 
 Limitations:
 
+- How many and who was surveyed for the results. 
+
 - Somewhat indefinite variables as they are dependent on who was asked for the results. 
 
 - World circumstances, such as war, natural disaster and social circumstances can effect the results given by citizens.
@@ -104,16 +106,20 @@ A country such as South Africa which has a happiness ranking of 113, has also be
 
 'Therefore the GDP and Freedom Rating  are proportional to the happiness score.'
 
+**Example of our Model and Code **
 
-The write-up of your project and findings go here. 
+This is an example of the code we have used to design our plots, this conveys how the ratings of Family vary with the overall Happiness Score. We decided to display them as a jitter plot as many point were close together and over lapping so the jitter adds a some variance. The Smooth adds a linear trend line through the points. 
 
-Think of this as the text of your presentation with some extra detail to cover what there was not time to discuss in the presentation. This might include any assumptions you made when doing your analysis, any limitations of the work you have done or any ideas you have for future work. Feel free to split this section into subsections to make it easier to read. 
-
-
-
-```{r load-data, echo = FALSE}
-# load data here, if you like
+```{r echo=FALSE}
+knitr::include_graphics("images_for_write_up/example_code.png")
 ```
+
+The following model is predicting the Economy Score from the countries GDP. We used a bootstrap to estimate a parameter from our sample. To ensure that the data we used was a more accurate depiction of the countries and its ranking. 
+
+```{r echo=FALSE}
+knitr::include_graphics("images_for_write_up/example_model.png")
+```
+
 
 ## Presentation
 
