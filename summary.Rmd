@@ -105,8 +105,12 @@ Resulting Evaluation:
 A country such as South Africa which has a happiness ranking of 113, has also been ranked as one of the countries with the Highest Wealth Inequality (external source 1)
 - The next factor from the hypothesis was freedom, for our scatter graph we see that there is a similar pattern as the last factor although not as definitive, therefore although our hypothesis is true the link between the factors is not as strong as we thought it would be. This data analysis gave us a different perspective as the outcome we expected differed from our original idea. 
 
-
 'Therefore the GDP and Freedom Rating  are proportional to the happiness score.'
+
+- Our final hypothesis was that 'countries where Government Corruption is higher, the happiness score will be lower'. The trust variable involves the amount of government corruption experienced in each individual country. We created a graph with the variables happiness score and trust. The findings of this graph agree with the original hypothesis but there was some variance as the trend was not as extreme as we originally expected. As government corruption decreased, the happiness score increases but the gradient line, given by geom smooth, was not as steep as we had foreseen.
+
+- All of our hypothesis were correct but only one was as certain as we had expected, therefore our data analysis added value to the dataset as it was able to show some unanticipated results. 
+
 
 **Example of our Model and Code **
 
