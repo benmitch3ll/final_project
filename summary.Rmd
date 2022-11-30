@@ -51,7 +51,7 @@ Another dataset we left joined with our 2015 set was the 'countries of the world
 
 After analysing our dataset and how different variables can be used we decided to find another data set, _Countries of the World_, and use a left join to join it with our _2015 Happiness Set_. By doing this we have more variables for each individual country, such as population, coast line and population density. We noticed some of our countries had NA values, to resolve this we renamed some of the countries in the _Countries of the World_ dataset, so that they would match up with the _2015_ format of each country. 
 
-We made 5 scatter graphs to show how each of our chosen variables varied with the Happiness Score. To which we then added a linear regression model 
+We made 5 scatter graphs to show how each of our chosen variables varied with the Happiness Score. To which we then added a linear regression model.
 
 **An Example of our Coding and Graph results**
 
@@ -79,7 +79,21 @@ Graph 1: Family vs Happiness Score
 
 - Our scatter plot has a positive linear correlation, where the association between points is quite strong. Where generally as the Happiness Score increases the Family rating increases to. There are few outliers from the general trend. 
 
+Graph 2: Freedom vs Happiness Score 
 
+- Our scatter plot has a positive linear correlation, but this one is not as strong in its connection as there is more variance between points. There are some outliers, but also a weaker line of best fit. 
+
+Graph 3: Health vs Happiness Score 
+
+- The graph again has a positive linear correlation. More of the outliers are located in the lower happiness scores. Where some of the lower health rating have a higher happiness ranking, we believe this is most likely due to the fact that not one factor have the main impact. 
+
+Graph 4: Government Trust vs Happiness Score
+
+- With this graph there is more of a cluster of points in the lower trust rating, implying that trust is lacking in more countries. 
+
+Graph 5: Economy vs Happiness Score 
+
+- This graph shows a strong, linear, positive correlation between the variable and score. This variable is more directly proportional than some others. 
 
 Graph Connections 
 
