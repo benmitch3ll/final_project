@@ -153,6 +153,7 @@ lower <- mean(phones_confidence_0$.lower)
 upper <- mean(phones_confidence_0$.upper)
 ```
 
+
 class: center, middle
 
 ## How  Do a Range of Factors Affect Worldwide Happiness???
@@ -288,6 +289,11 @@ ggplot(data = happiness_countries,
 
 ```
 
+---
+class: inverse, middle, center
+
+# Plots
+
 ```{r echo=FALSE}
 happiness %>%
 ggplot(data = happiness_countries, 
@@ -298,6 +304,22 @@ ggplot(data = happiness_countries,
        x = "Economy Score",
        y = "GDP")
 
+```
+
+---
+class: inverse, middle, center
+
+# Regions Plot
+
+```{r echo=FALSE}
+happiness_countries %>%
+  ggplot(data = happiness_countries, 
+         mapping = aes(x = happiness_score, y = Region.x))+
+  geom_point()+
+  labs(title = "Happiness Score shown by Region",
+       subtitle = "Regions are split into sub regions",
+       x = "Happiness Score",
+       y = "Region")
 ```
 
 ---
