@@ -99,10 +99,12 @@ Limitations:
 
 - Our leading dataset is from 2015, and is therefore seven years old (from 2022), the results may me out of data and different countries could be making developments on the scale. The joined dataset is from 2017 (five years ago), when compared to each other the two year gap will be incorrect for some variables such as population, which may have had growth in the time. 
 
-Resulting Hypothesis:
+Resulting Evaluation:
 
 - Our first hypothesis was that 'countries with higher GDP and freedom rating, the happiness score will be higher than countries with a lower GDP and freedom rating'. We confirm that this is true, as it was shown in the resulting scatter graphs, although the graph does not show them to be directly proportional as the graph does not have a distinct straight line. Our reasoning for this is that some countries have a large number of people in poverty and then higher numbers of the richest people worldwide, known as wealth inequality. 
-A country such as South Africa which has a happiness ranking of 113, has also been ranked as one of the countries with the Highest Wealth Inequalities (external source 1)
+A country such as South Africa which has a happiness ranking of 113, has also been ranked as one of the countries with the Highest Wealth Inequality (external source 1)
+- The next factor from the hypothesis was freedom, for our scatter graph we see that there is a similar pattern as the last factor although not as definitive, therefore although our hypothesis is true the link between the factors is not as strong as we thought it would be. This data analysis gave us a different perspective as the outcome we expected differed from our original idea. 
+
 
 'Therefore the GDP and Freedom Rating  are proportional to the happiness score.'
 
