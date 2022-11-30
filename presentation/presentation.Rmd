@@ -110,7 +110,7 @@ haelth_coef <- health_models %>%
 
 health_confidence <- int_pctl(health_models, coef_info)
 
-#we are 95% confident that for each additional  0.1 of a point of health score, we would expect infant mortality to increase by  to , on average.
+#we are 95% confident that for each additional  0.1 of a point of health score, we would expect infant mortality to decrease by 9637.09 to 14180.66, on average.
 ```
 
 ```{r include=FALSE, eval = FALSE}
@@ -132,18 +132,45 @@ phones_coef <- phones_models %>%
 
 phones_confidence <- int_pctl(phones_models, coef_info)
 
-#we are 95% confident that for each additional  0.1 phones per 1000 people, we would expect the happiness score to increase by  0.90 to 2.56, on average.
+#we are 95% confident that for each additional  1 phones per 1000 people, we would expect the happiness score to increase by  0.90 to 2.56, on average.
 ```
 
-```{r include=FALSE, eval = FALSE}
+```{r include=TRUE, eval = TRUE}
 happiness_countries %>%
+  drop_na(phones) %>%
   ggplot(data = happiness_countries,
-         mapping = aes(x = happiness_score, y = phones))+
-    geom_jitter() +
-  geom_smooth(method = "lm") +
+         mapping = aes(x = phones, y = happiness_score,
+                       na.rm = TRUE))+
+  geom_jitter() +
+  expand_limits(y = c(0, 10)) +
   labs(title = "Happiness Score against Phones per 1000 People",
        x = "Phones Per 1000 People",
-       y = "Happiness Score")
+       y = "Happiness Score") +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        plot.background = element_rect(fill = "aquamarine4"),
+        axis.line = element_line(size = rel(3), 
+                                 arrow = arrow(), 
+                                 colour = "black"),
+        panel.background = element_rect(fill = "gray90", 
+                                        colour = "aquamarine4"),
+        axis.title.y = element_text(size = rel(1.5), 
+                                    angle = (90),
+                                    color = "white"),
+        axis.title.x = element_text(size = rel(1.5),
+                                    color = "white"),
+        panel.grid.major = element_line(colour = "aquamarine4"),
+        panel.grid = element_line(colour = "aquamarine4"),
+        plot.title = element_text(size = rel(1.2),
+                                  color = "white"),
+        legend.text = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.title = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.background = element_rect(fill = "gray90"),
+        legend.key = element_rect(fill = "gray90"),
+        axis.text = element_text(color = "white")
+        )
 ```
 
 ```{r include=FALSE, eval = FALSE}
@@ -209,11 +236,33 @@ happiness %>%
 ggplot(data = happiness_countries, 
        mapping = aes(x = family, y = happiness_score))+
   geom_jitter() +
-  geom_smooth(method = "lm") +
+  geom_smooth(method = "lm", se = F) +
   labs(title = "Happiness Score with Family",
        x = "Family",
-       y = "Happiness Score")
-
+       y = "Happiness Score") + 
+  theme(plot.background = element_rect(fill = "aquamarine4"),
+        axis.line = element_line(size = rel(3), 
+                                 arrow = arrow(), 
+                                 colour = "black"),
+        panel.background = element_rect(fill = "gray90", 
+                                        colour = "aquamarine4"),
+        axis.title.y = element_text(size = rel(1.5), 
+                                    angle = (90),
+                                    color = "white"),
+        axis.title.x = element_text(size = rel(1.5),
+                                    color = "white"),
+        panel.grid.major = element_line(colour = "aquamarine4"),
+        panel.grid = element_line(colour = "aquamarine4"),
+        plot.title = element_text(size = rel(1.2),
+                                  color = "white"),
+        legend.text = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.title = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.background = element_rect(fill = "gray90"),
+        legend.key = element_rect(fill = "gray90"),
+        axis.text = element_text(color = "white")
+        )
 ```
 
 
@@ -228,10 +277,33 @@ happiness %>%
 ggplot(data = happiness_countries, 
        mapping = aes(x = freedom, y = happiness_score))+
   geom_jitter()+
-  geom_smooth(method = "lm") +
+  geom_smooth(method = "lm", se = F) +
   labs(title = "Happiness Score with Freedom",
        x = "Freedom",
-       y = "Happiness Score")
+       y = "Happiness Score") + 
+  theme(plot.background = element_rect(fill = "aquamarine4"),
+        axis.line = element_line(size = rel(3), 
+                                 arrow = arrow(), 
+                                 colour = "black"),
+        panel.background = element_rect(fill = "gray90", 
+                                        colour = "aquamarine4"),
+        axis.title.y = element_text(size = rel(1.5), 
+                                    angle = (90),
+                                    color = "white"),
+        axis.title.x = element_text(size = rel(1.5),
+                                    color = "white"),
+        panel.grid.major = element_line(colour = "aquamarine4"),
+        panel.grid = element_line(colour = "aquamarine4"),
+        plot.title = element_text(size = rel(1.2),
+                                  color = "white"),
+        legend.text = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.title = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.background = element_rect(fill = "gray90"),
+        legend.key = element_rect(fill = "gray90"),
+        axis.text = element_text(color = "white")
+        )
 
 ```
 
@@ -246,10 +318,33 @@ happiness %>%
 ggplot(data = happiness_countries, 
        mapping = aes(x = health, y = happiness_score))+
   geom_jitter()+
-  geom_smooth(method = "lm") +
+  geom_smooth(method = "lm", se = F) +
   labs(title = "Happiness Score with Health",
        x = "Health",
-       y = "Happiness Score")
+       y = "Happiness Score") + 
+  theme(plot.background = element_rect(fill = "aquamarine4"),
+        axis.line = element_line(size = rel(3), 
+                                 arrow = arrow(), 
+                                 colour = "black"),
+        panel.background = element_rect(fill = "gray90", 
+                                        colour = "aquamarine4"),
+        axis.title.y = element_text(size = rel(1.5), 
+                                    angle = (90),
+                                    color = "white"),
+        axis.title.x = element_text(size = rel(1.5),
+                                    color = "white"),
+        panel.grid.major = element_line(colour = "aquamarine4"),
+        panel.grid = element_line(colour = "aquamarine4"),
+        plot.title = element_text(size = rel(1.2),
+                                  color = "white"),
+        legend.text = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.title = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.background = element_rect(fill = "gray90"),
+        legend.key = element_rect(fill = "gray90"),
+        axis.text = element_text(color = "white")
+        )
 
 ```
 
@@ -264,10 +359,33 @@ happiness %>%
 ggplot(data = happiness_countries, 
        mapping = aes(x = trust, y = happiness_score))+
   geom_jitter()+
-  geom_smooth(method = "lm") +
+  geom_smooth(method = "lm", se = F) +
   labs(title = "Happiness Score with Government Trust",
        x = "Trust",
-       y = "Happiness Score")
+       y = "Happiness Score") + 
+  theme(plot.background = element_rect(fill = "aquamarine4"),
+        axis.line = element_line(size = rel(3), 
+                                 arrow = arrow(), 
+                                 colour = "black"),
+        panel.background = element_rect(fill = "gray90", 
+                                        colour = "aquamarine4"),
+        axis.title.y = element_text(size = rel(1.5), 
+                                    angle = (90),
+                                    color = "white"),
+        axis.title.x = element_text(size = rel(1.5),
+                                    color = "white"),
+        panel.grid.major = element_line(colour = "aquamarine4"),
+        panel.grid = element_line(colour = "aquamarine4"),
+        plot.title = element_text(size = rel(1.2),
+                                  color = "white"),
+        legend.text = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.title = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.background = element_rect(fill = "gray90"),
+        legend.key = element_rect(fill = "gray90"),
+        axis.text = element_text(color = "white")
+        )
 
 ```
 
@@ -282,11 +400,33 @@ happiness %>%
 ggplot(data = happiness_countries, 
        mapping = aes(x = economy, y = happiness_score))+
   geom_jitter()+
-  geom_smooth(method = "lm") +
+  geom_smooth(method = "lm", se = F) +
   labs(title = "Happiness Score with Economy", 
-       subtitle = "In terms of GDP",
        x = "Economy",
-       y = "Happiness Score")
+       y = "Happiness Score") + 
+  theme(plot.background = element_rect(fill = "aquamarine4"),
+        axis.line = element_line(size = rel(3), 
+                                 arrow = arrow(), 
+                                 colour = "black"),
+        panel.background = element_rect(fill = "gray90", 
+                                        colour = "aquamarine4"),
+        axis.title.y = element_text(size = rel(1.5), 
+                                    angle = (90),
+                                    color = "white"),
+        axis.title.x = element_text(size = rel(1.5),
+                                    color = "white"),
+        panel.grid.major = element_line(colour = "aquamarine4"),
+        panel.grid = element_line(colour = "aquamarine4"),
+        plot.title = element_text(size = rel(1.2),
+                                  color = "white"),
+        legend.text = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.title = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.background = element_rect(fill = "gray90"),
+        legend.key = element_rect(fill = "gray90"),
+        axis.text = element_text(color = "white")
+        )
 
 ```
 
@@ -297,13 +437,36 @@ class: inverse, middle, center
 
 ```{r echo=FALSE}
 happiness %>%
-ggplot(data = happiness_countries, 
-       mapping = aes(x = economy, y = gdp))+
+  ggplot(data = happiness_countries, 
+         mapping = aes(x = economy, y = gdp))+
   geom_jitter()+
-  geom_smooth(method = "loess") +
+  geom_smooth(method = "loess", se = F) +
   labs(title = "Economy Score against GDP",
        x = "Economy Score",
-       y = "GDP")
+       y = "GDP") + 
+  theme(plot.background = element_rect(fill = "aquamarine4"),
+        axis.line = element_line(size = rel(3), 
+                                 arrow = arrow(), 
+                                 colour = "black"),
+        panel.background = element_rect(fill = "gray90", 
+                                        colour = "aquamarine4"),
+        axis.title.y = element_text(size = rel(1.5), 
+                                    angle = (90),
+                                    color = "white"),
+        axis.title.x = element_text(size = rel(1.5),
+                                    color = "white"),
+        panel.grid.major = element_line(colour = "aquamarine4"),
+        panel.grid = element_line(colour = "aquamarine4"),
+        plot.title = element_text(size = rel(1.2),
+                                  color = "white"),
+        legend.text = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.title = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.background = element_rect(fill = "gray90"),
+        legend.key = element_rect(fill = "gray90"),
+        axis.text = element_text(color = "white")
+        )
 
 ```
 ---
@@ -316,11 +479,36 @@ class: inverse, middle, center
 happiness_countries %>%
   ggplot(data = happiness_countries, 
          mapping = aes(x = happiness_score, y = Region.x))+
-  geom_point()+
+  geom_boxplot()+
   labs(title = "Happiness Score shown by Region",
        subtitle = "Regions are split into sub regions",
        x = "Happiness Score",
-       y = "Region")
+       y = "Region") + 
+  theme(plot.background = element_rect(fill = "aquamarine4"),
+        axis.line = element_line(size = rel(3), 
+                                 arrow = arrow(), 
+                                 colour = "black"),
+        panel.background = element_rect(fill = "gray90", 
+                                        colour = "aquamarine4"),
+        axis.title.y = element_text(size = rel(1.5), 
+                                    angle = (90),
+                                    color = "white"),
+        axis.title.x = element_text(size = rel(1.5),
+                                    color = "white"),
+        panel.grid.major = element_line(colour = "aquamarine4"),
+        panel.grid = element_line(colour = "aquamarine4"),
+        plot.title = element_text(size = rel(1.2),
+                                  color = "white"),
+        plot.subtitle = element_text(size = rel(1),
+                                  color = "white"),
+        legend.text = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.title = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.background = element_rect(fill = "gray90"),
+        legend.key = element_rect(fill = "gray90"),
+        axis.text = element_text(color = "white")
+        )
 ```
 
 ---

@@ -45,17 +45,61 @@ class: center, middle, inverse, title-slide
 
 
 
----
 
 
 
 
 
----
 
 
 
----
+```r
+happiness_countries %&gt;%
+  drop_na(phones) %&gt;%
+  ggplot(data = happiness_countries,
+         mapping = aes(x = phones, y = happiness_score,
+                       na.rm = TRUE))+
+  geom_jitter() +
+  expand_limits(y = c(0, 10)) +
+  labs(title = "Happiness Score against Phones per 1000 People",
+       x = "Phones Per 1000 People",
+       y = "Happiness Score") +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        plot.background = element_rect(fill = "aquamarine4"),
+        axis.line = element_line(size = rel(3), 
+                                 arrow = arrow(), 
+                                 colour = "black"),
+        panel.background = element_rect(fill = "gray90", 
+                                        colour = "aquamarine4"),
+        axis.title.y = element_text(size = rel(1.5), 
+                                    angle = (90),
+                                    color = "white"),
+        axis.title.x = element_text(size = rel(1.5),
+                                    color = "white"),
+        panel.grid.major = element_line(colour = "aquamarine4"),
+        panel.grid = element_line(colour = "aquamarine4"),
+        plot.title = element_text(size = rel(1.2),
+                                  color = "white"),
+        legend.text = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.title = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.background = element_rect(fill = "gray90"),
+        legend.key = element_rect(fill = "gray90"),
+        axis.text = element_text(color = "white")
+        )
+```
+
+```
+## Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
+## ℹ Please use the `linewidth` argument instead.
+```
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-8-1.png" width="80%" /&gt;
+
+
+
 
 class: center, middle
 
@@ -111,37 +155,11 @@ class: inverse, middle, center
 ## `geom_smooth()` using formula = 'y ~ x'
 ```
 
-&lt;img src="presentation_files/figure-html/unnamed-chunk-8-1.png" width="80%" /&gt;
-
-
----
-
-class: inverse, middle, center
-
-# Plots
-
-
-```
-## `geom_smooth()` using formula = 'y ~ x'
-```
-
-&lt;img src="presentation_files/figure-html/unnamed-chunk-9-1.png" width="80%" /&gt;
-
-
----
-class: inverse, middle, center
-
-# Plots
-
-
-```
-## `geom_smooth()` using formula = 'y ~ x'
-```
-
 &lt;img src="presentation_files/figure-html/unnamed-chunk-10-1.png" width="80%" /&gt;
 
 
 ---
+
 class: inverse, middle, center
 
 # Plots
@@ -166,6 +184,32 @@ class: inverse, middle, center
 
 &lt;img src="presentation_files/figure-html/unnamed-chunk-12-1.png" width="80%" /&gt;
 
+
+---
+class: inverse, middle, center
+
+# Plots
+
+
+```
+## `geom_smooth()` using formula = 'y ~ x'
+```
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-13-1.png" width="80%" /&gt;
+
+
+---
+class: inverse, middle, center
+
+# Plots
+
+
+```
+## `geom_smooth()` using formula = 'y ~ x'
+```
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-14-1.png" width="80%" /&gt;
+
 ---
 class: inverse, middle, center
 
@@ -184,14 +228,14 @@ class: inverse, middle, center
 ## Warning: Removed 8 rows containing missing values (`geom_point()`).
 ```
 
-&lt;img src="presentation_files/figure-html/unnamed-chunk-13-1.png" width="80%" /&gt;
-
+&lt;img src="presentation_files/figure-html/unnamed-chunk-15-1.png" width="80%" /&gt;
+---
 ---
 class: inverse, middle, center
 
 # Regions Plot
 
-&lt;img src="presentation_files/figure-html/unnamed-chunk-14-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-16-1.png" width="80%" /&gt;
 
 ---
     </textarea>
