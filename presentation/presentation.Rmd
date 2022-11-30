@@ -136,9 +136,10 @@ phones_confidence <- int_pctl(phones_models, coef_info)
 ```
 
 ```{r include=FALSE, eval = FALSE}
-n <- happiness_countries %>%
-ggplot(mapping = aes(x = happiness_score, y = phones))+
-  geom_jitter() +
+happiness_countries %>%
+  ggplot(data = happiness_countries,
+         mapping = aes(x = happiness_score, y = phones))+
+    geom_jitter() +
   geom_smooth(method = "lm") +
   labs(title = "Happiness Score against Phones per 1000 People",
        x = "Phones Per 1000 People",
@@ -305,7 +306,7 @@ ggplot(data = happiness_countries,
        y = "GDP")
 
 ```
-
+---
 ---
 class: inverse, middle, center
 
