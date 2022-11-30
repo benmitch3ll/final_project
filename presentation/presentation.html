@@ -52,6 +52,68 @@ class: center, middle, inverse, title-slide
 
 
 
+```r
+happiness_countries %&gt;%
+    drop_na(infant_mortality) %&gt;%
+  ggplot(data = happiness_countries,
+         mapping = aes(x = health, y = infant_mortality,
+                       na.rm = TRUE))+
+  geom_jitter() +
+  geom_smooth(method = "lm", se = F) +
+  labs(title = "Infant Mortality against Health",
+       x = "Health Score",
+       y = "Infant Mortality") +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        plot.background = element_rect(fill = "aquamarine4"),
+        axis.line = element_line(size = rel(3), 
+                                 arrow = arrow(), 
+                                 colour = "black"),
+        panel.background = element_rect(fill = "gray90", 
+                                        colour = "aquamarine4"),
+        axis.title.y = element_text(size = rel(1.5), 
+                                    angle = (90),
+                                    color = "white"),
+        axis.title.x = element_text(size = rel(1.5),
+                                    color = "white"),
+        panel.grid.major = element_line(colour = "aquamarine4"),
+        panel.grid = element_line(colour = "aquamarine4"),
+        plot.title = element_text(size = rel(1.2),
+                                  color = "white"),
+        legend.text = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.title = element_text(size = rel(1.5),
+                                   color = "black"),
+        legend.background = element_rect(fill = "gray90"),
+        legend.key = element_rect(fill = "gray90"),
+        axis.text = element_text(color = "white")
+        )
+```
+
+```
+## Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
+## ℹ Please use the `linewidth` argument instead.
+```
+
+```
+## `geom_smooth()` using formula = 'y ~ x'
+```
+
+```
+## Warning: Removed 8 rows containing non-finite values (`stat_smooth()`).
+```
+
+```
+## Warning: Removed 8 rows containing missing values (`geom_point()`).
+```
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-7-1.png" width="80%" /&gt;
+
+
+
+
+
+
 
 ```r
 happiness_countries %&gt;%
@@ -91,15 +153,7 @@ happiness_countries %&gt;%
         )
 ```
 
-```
-## Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
-## ℹ Please use the `linewidth` argument instead.
-```
-
-&lt;img src="presentation_files/figure-html/unnamed-chunk-8-1.png" width="80%" /&gt;
-
-
-
+&lt;img src="presentation_files/figure-html/unnamed-chunk-10-1.png" width="80%" /&gt;
 
 class: center, middle
 
@@ -112,20 +166,30 @@ class: center, middle
 
 # Dataset Information
 
-The dataset we will be using for the project will be the World Happiness Report.
-The dataset was found on the website Kaggle (https://www.kaggle.com/datasets/unsdsn/world-happiness)
+-To try and answer this question we picked 2 data sets.
 
-The dataset uses the variables of Country, Region, Happiness rank, Happiness score, Standard error, Economy(GDP), Family, Health (Life Expectancy), Freedom, Trust (Government Corruption), Generosity and Dystopia Residual.
+-They were "World happiness Report" from 2015, and "Countries of The World.
 
-The dataset we are using was collected in 2015.
+-World Happiness Report contains data from a survey about overall happiness in 158 countries
 
-The dataset is used to help governments, organizations and civil society to inform their policy-making decisions.
-The happiness rank and score data was collected by the Gallup World Poll.
 
-The Gallup World Poll is said to be “the most comprehensive and farthest-reaching survey of the world”.
-
-On the Gallop website it is stated that the survey connects with more than 99% of the world's adult population through annual, nationally representative surveys with comparable metrics across countries.
-
+```
+## Rows: 158
+## Columns: 12
+## $ Country                         &lt;chr&gt; "Switzerland", "Iceland", "Denmark", "…
+## $ Region                          &lt;chr&gt; "Western Europe", "Western Europe", "W…
+## $ `Happiness Rank`                &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,…
+## $ `Happiness Score`               &lt;dbl&gt; 7.587, 7.561, 7.527, 7.522, 7.427, 7.4…
+## $ `Standard Error`                &lt;dbl&gt; 0.03411, 0.04884, 0.03328, 0.03880, 0.…
+## $ `Economy (GDP per Capita)`      &lt;dbl&gt; 1.39651, 1.30232, 1.32548, 1.45900, 1.…
+## $ Family                          &lt;dbl&gt; 1.34951, 1.40223, 1.36058, 1.33095, 1.…
+## $ `Health (Life Expectancy)`      &lt;dbl&gt; 0.94143, 0.94784, 0.87464, 0.88521, 0.…
+## $ Freedom                         &lt;dbl&gt; 0.66557, 0.62877, 0.64938, 0.66973, 0.…
+## $ `Trust (Government Corruption)` &lt;dbl&gt; 0.41978, 0.14145, 0.48357, 0.36503, 0.…
+## $ Generosity                      &lt;dbl&gt; 0.29678, 0.43630, 0.34139, 0.34699, 0.…
+## $ `Dystopia Residual`             &lt;dbl&gt; 2.51738, 2.70201, 2.49204, 2.46531, 2.…
+```
+- Variables economy, family, health, freedom, trust, and generosity show how happy people are with these things.
 
 ---
 
@@ -155,37 +219,11 @@ class: inverse, middle, center
 ## `geom_smooth()` using formula = 'y ~ x'
 ```
 
-&lt;img src="presentation_files/figure-html/unnamed-chunk-10-1.png" width="80%" /&gt;
-
-
----
-
-class: inverse, middle, center
-
-# Plots
-
-
-```
-## `geom_smooth()` using formula = 'y ~ x'
-```
-
-&lt;img src="presentation_files/figure-html/unnamed-chunk-11-1.png" width="80%" /&gt;
-
-
----
-class: inverse, middle, center
-
-# Plots
-
-
-```
-## `geom_smooth()` using formula = 'y ~ x'
-```
-
 &lt;img src="presentation_files/figure-html/unnamed-chunk-12-1.png" width="80%" /&gt;
 
 
 ---
+
 class: inverse, middle, center
 
 # Plots
@@ -210,6 +248,32 @@ class: inverse, middle, center
 
 &lt;img src="presentation_files/figure-html/unnamed-chunk-14-1.png" width="80%" /&gt;
 
+
+---
+class: inverse, middle, center
+
+# Plots
+
+
+```
+## `geom_smooth()` using formula = 'y ~ x'
+```
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-15-1.png" width="80%" /&gt;
+
+
+---
+class: inverse, middle, center
+
+# Plots
+
+
+```
+## `geom_smooth()` using formula = 'y ~ x'
+```
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-16-1.png" width="80%" /&gt;
+
 ---
 class: inverse, middle, center
 
@@ -228,14 +292,14 @@ class: inverse, middle, center
 ## Warning: Removed 8 rows containing missing values (`geom_point()`).
 ```
 
-&lt;img src="presentation_files/figure-html/unnamed-chunk-15-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-17-1.png" width="80%" /&gt;
 ---
 ---
 class: inverse, middle, center
 
 # Regions Plot
 
-&lt;img src="presentation_files/figure-html/unnamed-chunk-16-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-18-1.png" width="80%" /&gt;
 
 ---
     </textarea>
