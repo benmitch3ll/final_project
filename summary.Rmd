@@ -53,17 +53,15 @@ After analysing our dataset and how different variables can be used we decided t
 
 We made 5 scatter graphs to show how each of our chosen variables varied with the Happiness Score. To which we then added a linear regression model.
 
-**An Example of our Coding and Graph results**
-
-```{r echo=FALSE}
-#knitr::include_graphics("images_for_write_up/example_code.png")
-```
-
-```{r echo=FALSE}
-#knitr::include_graphics("images_for_write_up/Example_Graph.png")
-```
-
 **Findings**
+
+The Model
+
+-	We created a model predicting different variables from their score, we used bootstrapping to increase the confidence level in our results. 
+-	The results we obtained were, 
+-	We are 95% confident that for each additional 0.1 of a point of economy score, we would expect GDP to increase by $1734.00 to $2390.46, on average.
+-	We are 95% confident that for each additional 0.1 of a point of health score, we would expect infant mortality to decrease by 9637.09 to 14180.66, on average.
+-	We are 95% confident that for each additional  1 phones per 1000 people, we would expect the happiness score to increase by  0.90 to 2.56, on average. Although this model was shown as unreliable as when compared to the graph output we can see that there is very little correlation between the phones and happiness ranking. 
 
 Average Happiness Score
 
